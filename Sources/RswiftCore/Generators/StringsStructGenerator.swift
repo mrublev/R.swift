@@ -247,7 +247,7 @@ struct StringsStructGenerator: ExternalOnlyStructGenerator {
         Function.Parameter(
           name: "preferredLanguages",
           type: Type._Array.withGenericArgs([Type._String]).asOptional(),
-          defaultValue: "nil"
+          defaultValue: "UserDefaults.standard.array(forKey: \"rswift.lang\") as? [String]"
         )
       ],
       doesThrow: false,
@@ -282,7 +282,7 @@ struct StringsStructGenerator: ExternalOnlyStructGenerator {
     let prefereredLanguages = Function.Parameter(
       name: "preferredLanguages",
       type: Type._Array.withGenericArgs([Type._String]).asOptional(),
-      defaultValue: "nil"
+      defaultValue: "UserDefaults.standard.array(forKey: \"rswift.lang\") as? [String]"
     )
     params.append(prefereredLanguages)
 
